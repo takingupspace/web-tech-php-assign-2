@@ -15,9 +15,9 @@ function checkFName(input){
 }
 
 function checkLName(input){
-    var validFName = /^[\w'\-,.][^0-9_!¡?÷?¿\/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/;
+    var validLName = /^[\w'\-,.][^0-9_!¡?÷?¿\/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/;
     var checkInput = document.getElementById('lname').value;
-    if(!checkInput.match(validFName)){
+    if(!checkInput.match(validLName)){
         document.getElementById('lnameHelp').innerHTML = 'This is not a valid last name!';
         $("#submit").removeClass('btn-success');
         $("#submit").addClass('btn-danger');
@@ -47,9 +47,9 @@ function checkEmail(input){
 }
 
 function checkPNumber(input){
-    var validEmail = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
+    var validPhoneNumber = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4}$/;
     var checkInput = document.getElementById('pnumber').value;
-    if(!checkInput.match(validEmail)){
+    if(!checkInput.match(validPhoneNumber)){
         document.getElementById('pnumberHelp').innerHTML = 'This is not a valid phone number!';
         $("#submit").removeClass('btn-success');
         $("#submit").addClass('btn-danger');
@@ -63,9 +63,9 @@ function checkPNumber(input){
 }
 
 function checkDOB(input){
-    var validEmail = /^(0?[1-9]|1[0-2])\/([0-2]?[1-9]|[1-3][01])\/\d{4}$/;
+    var validDOB = /^(0?[1-9]|1[0-2])\/([0-2]?[1-9]|[1-3][01])\/\d{4}$/;
     var checkInput = document.getElementById('dob').value;
-    if(!checkInput.match(validEmail)){
+    if(!checkInput.match(validDOB)){
         document.getElementById('dobHelp').innerHTML = 'This is not a valid date of birth!';
         $("#submit").removeClass('btn-success');
         $("#submit").addClass('btn-danger');
@@ -79,9 +79,9 @@ function checkDOB(input){
 }
 
 function checkContactMethod(input){
-    var validEmail = /^[Ee]mail$|^[Pp]hone$/;
+    var validContact = /^[Ee]mail$|^[Pp]hone$/;
     var checkInput = document.getElementById('contactmethod').value;
-    if(!checkInput.match(validEmail)){
+    if(!checkInput.match(validContact)){
         document.getElementById('contactmethodHelp').innerHTML = 'Please enter E(e)mail or P(p)hone for your preferred contact method!';
         $("#submit").removeClass('btn-success');
         $("#submit").addClass('btn-danger');
@@ -108,4 +108,8 @@ function checkComment(input){
         $("#submit").addClass('btn-success');
         $("#submit").prop("disabled", false);
     }
+}
+
+function allValid(input){
+
 }
