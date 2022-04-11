@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="./assets/bootstrap-3.3.7-dist/css/bootstrap.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <title>Contact</title>
+        <script src="./assets/validation.js"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Travis Sauer's Resume Website</a>
+              </div>
+              <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                  <li class="active"><a href="./home.html">Home</a></li>
+                  <li><a href="./work.html">Work</a></li>
+                  <li><a href="./school.html">School</a></li>
+                  <li><a href="./contact.html">Contact</a></li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <div id="page-inner">
+            <div id="container">
+            <div class="panel panel-primary">
+              <div class="panel-heading">Contact Form</div>
+                  <div class="panel-body">
+            <form method="post" action="output.php">
+              <div class="form-group">
+              <label>First Name:</label>
+              <input class="form-control" name="fname" type="text" id="fname" onkeyup="checkFName(this.value)">
+              <p class="help-block" id="fnameHelp"></p>
+              </div>
+              <div class="form-group">
+              <label>Last Name:</label>
+              <input class="form-control" name="lname" type="text" onkeyup="checkLName(this.value)" id="lname">
+              <p class="help-block" id="lnameHelp"></p>
+              </div>
+              <div class="form-group">
+              <label>Email:</label>
+              <input class="form-control" name="email" type="text" id="email" onkeyup="checkEmail(this.value)">
+              <p class="help-block" id="emailHelp"></p>
+              </div>
+              <div class="form-group">
+                <label>Phone Number:</label>
+                <input class="form-control" name="pnumber" type="text" id="pnumber" onkeyup="checkPNumber(this.value)">
+                <p class="help-block" id="pnumberHelp"></p>
+                </div>
+                <div class="form-group">
+                  <label>Date of Birth:</label>
+                  <input class="form-control" name="dob" type="text" id="dob" onkeyup="checkDOB(this.value)">
+                  <p class="help-block" id="dobHelp"></p>
+                  </div>
+                  <div class="form-group">
+                    <label>Preferred Contact Method:</label>
+                    <input class="form-control" name="contactmethod" type="text" id="contactmethod" onkeyup="checkContactMethod(this.value)">
+                    <p class="help-block" id="contactmethodHelp"></p>
+                    </div>
+              <div class="form-group">
+              <label>Comment:</label>
+                <textarea id="comment" name="comment" rows="10" cols="50" onkeyup="checkComment(this.value)"></textarea>
+              <p class="help-block" id="commentHelp"></p>
+              </div>
+              <hr>
+              <button id="submit" class="btn btn-block btn-success" type="submit">Submit</button>
+            </form>
+            </div>
+              </div>
+            </div>
+          </div>
+              <nav class="navbar navbar-inverse navbar-fixed-bottom">
+                <div class="container-fluid">
+                  <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Travis' Resume Website Footer</a>
+                  </div>
+                </div>
+              </nav>
+    </body>
+</html>
