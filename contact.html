@@ -32,7 +32,7 @@
             <div class="panel panel-primary">
               <div class="panel-heading">Contact Form</div>
                   <div class="panel-body">
-            <form method="post" action="">
+            <form method="post" action="" id="submitForm">
               <div class="form-group">
               <label>First Name:</label>
               <input class="form-control" name="fname" type="text" id="fname" onkeyup="checkFName(this.value)" required>
@@ -70,6 +70,21 @@
               </div>
               <hr>
               <button id="submit" class="btn btn-block btn-success" type="submit">Submit</button>
+              <script>
+                $('#submitForm').on("submit", function(e){
+                  e.preventDefault();
+                  var fName = $('#fname').val();
+                  var lName = $("#lname").val();
+                  var email = $('#email').val();
+                  var phoneNumber = $('#pnumber').val();
+                  var DOB = $('#dob').val();
+                  var contactMethod = $('#contactmethod').val();
+                  var comment = $('#comment').val();
+                  alert("First Name = " + fName + " >>> Last Name = " + lName + " >>> Email = " + email +
+                  " Phone Number = " + phoneNumber + " >>> Date of Birth = " + DOB + " >>> Preferred Contact Method = " +
+                  contactMethod + " >>> Comment = " + comment);
+                })
+              </script>
             </form>
             </div>
               </div>
