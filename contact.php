@@ -96,11 +96,10 @@ if (isset($_POST['submit']))
 	}
 	else
 		$err.="emailNull";
-	if (isset($err) && $err!="")
+	if (isset($err) && $err != "")
 	{
 		redirect("index.php?page=contact&err=$err");
 	}
-    die("error is $err");
 	echo "<div>First Name: $firstName</div>";
 	echo "<div>Last Name: $lastName</div>";
 	echo "<div>Email: $email</div>";
