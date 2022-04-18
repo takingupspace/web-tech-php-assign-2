@@ -82,11 +82,11 @@ if (isset($_POST['submit']))
 
 	$err="";
 
-	$comment=$_POST['comment'];
+	$comment = $_POST['comment'];
     if (isset($_POST['comment']) && $_POST['comment'] != "")
 	{
-		$comment=$_POST['comment'];
-		$_SESSION['comment'] = $firstName;
+		$comment = $_POST['comment'];
+		$_SESSION['comment'] = $comment;
 	}
 	else
 		$err .="commentNull";
