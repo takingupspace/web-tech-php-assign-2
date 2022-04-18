@@ -1,5 +1,14 @@
 <?php
 session_start();
+echo '<!DOCTYPE html>';
+echo '<html>';
+echo '<head>';
+echo '<link rel="stylesheet" href="./assets/bootstrap-3.3.7-dist/css/bootstrap.css">                ';
+echo '<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>';
+echo '<title>Contact</title>';
+echo '</head>';
+echo '<body>';
+echo '<script src="./assets/validation.js"></script>';
 echo '<nav class="navbar navbar-inverse">                                                                                               ';
 echo '<div class="container-fluid">';
 echo '  <div class="navbar-header">';
@@ -8,14 +17,14 @@ echo '      <span class="icon-bar"></span>';
 echo '      <span class="icon-bar"></span>';
 echo '      <span class="icon-bar"></span>';
 echo '    </button>';
-echo '    <a class="navbar-brand" href="#">Travis Sauer's Resume Website</a>';
+echo '    <a class="navbar-brand" href="#">Travis Sauer\'s Resume Website</a>';
 echo '  </div>';
 echo '  <div class="collapse navbar-collapse" id="myNavbar">';
 echo '    <ul class="nav navbar-nav">';
 echo '      <li class="active"><a href="./home.html">Home</a></li>';
 echo '      <li><a href="./work.html">Work</a></li>';
 echo '      <li><a href="./school.html">School</a></li>';
-echo '      <li><a href="./contact.html">Contact</a></li>';
+echo '      <li><a href="./contact.php">Contact</a></li>';
 echo '    </ul>';
 echo '  </div>';
 echo '</div>';
@@ -100,4 +109,6 @@ if (isset($_POST['submit']))
 	echo "<div>Email: $email</div>";
 	echo "<div>Comment: $comment</div>";
 }
+echo '</body>';
+echo '</html>';
 ?>
