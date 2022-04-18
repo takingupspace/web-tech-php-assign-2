@@ -164,8 +164,8 @@ if (isset($_POST['submit']))
 
 	if (isset($err) && $err != "")
 	{
-        die("Error is: $err");
-	}
+        echo "<div>Error is: $err</div>";
+	}else{
 	echo "<div>First Name: $firstName</div>";
 	echo "<div>Last Name: $lastName</div>";
 	echo "<div>Email: $email</div>";
@@ -173,6 +173,7 @@ if (isset($_POST['submit']))
     echo "<div>Date of Birth: $dob</div>";
     echo "<div>Preferred Contact Method: $contactPref</div>";
 	echo "<div>Comment: $comment</div>";
+    }
 }
 echo '</body>';
 echo '</html>';
