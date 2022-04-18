@@ -164,7 +164,7 @@ if (isset($_POST['submit']))
 
 	if (isset($err) && $err != "")
 	{
-		redirect("index.php?page=contact&err=$err");
+		echo "<div>Error is: $err</div>";
 	}
 	echo "<div>First Name: $firstName</div>";
 	echo "<div>Last Name: $lastName</div>";
