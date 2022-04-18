@@ -36,28 +36,24 @@ echo '<div id="container">
 <form method="post" action="">
 	<div class="form-group">
 	<label>First Name:</label>';
-if (isset($_SESSION['first']) && $_SESSION['first']!="")
+if (isset($_SESSION['first']) && $_SESSION['first'] != "")
 	echo '<input class="form-control" name="fname" type="text" id="fname" onblur="checkFName(this.value)" value="'.$_SESSION['first'].'">';
 else
 	echo '<input class="form-control" name="fname" type="text" id="fname" onblur="checkFName(this.value)">';
-echo '<p class="help-block" id="fnameHelp"></p>';
-echo '</div>';
-if (isset($_GET['err']) && strstr($_GET['err'],"LnameNull"))
+    echo '<p class="help-block" id="fnameHelp"></p>';
+    echo '</div>';
+    echo '<div class="form-group">';
+	echo '<label>Last Name:</label>';
+if (isset($_SESSION['last']) && $_SESSION['last'] != "")
 {
-	echo '<div class="form-group has-error">';
-	echo '<label class="control-label" for="inputError1">Last Name:</label>';
-	echo '<input class="form-control" id="inputError1" name="lname" type="text" id="lname">';
-	echo '<p class="help-block" id="lnameHelp">Cannot be blank!</p>';
-	echo '</div>';
+    echo '<input class="form-control" name="lname" type="text" id="lname" onblur="checkLName(this.value)" value="'.$_SESSION['last'].'">';
 }
 else
 {
-	echo '<div class="form-group">';
-	echo '<label>Last Name:</label>';
-	echo '<input class="form-control" name="lname" type="text" id="lname">';
-	echo '<p class="help-block" id="lnameHelp"></p>';
-	echo '</div>';
+	echo '<input class="form-control" name="lname" type="text" id="lname" onblur="checkLName(this.value)">';
 }
+echo '<p class="help-block" id="lnameHelp"></p>';
+echo '</div>';
 echo '<div class="form-group">
 		<label>Email:</label>
 		<input class="form-control" name="email" type="text" id="email">
