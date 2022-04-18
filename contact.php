@@ -40,10 +40,10 @@ if (isset($_SESSION['first']) && $_SESSION['first'] != "")
 	echo '<input class="form-control" name="fname" type="text" id="fname" onblur="checkFName(this.value)" value="'.$_SESSION['first'].'">';
 else
 	echo '<input class="form-control" name="fname" type="text" id="fname" onblur="checkFName(this.value)">';
-    echo '<p class="help-block" id="fnameHelp"></p>';
-    echo '</div>';
-    echo '<div class="form-group">';
-	echo '<label>Last Name:</label>';
+echo '<p class="help-block" id="fnameHelp"></p>';
+echo '</div>';
+echo '<div class="form-group">';
+echo '<label>Last Name:</label>';
 if (isset($_SESSION['last']) && $_SESSION['last'] != "")
 {
     echo '<input class="form-control" name="lname" type="text" id="lname" onblur="checkLName(this.value)" value="'.$_SESSION['last'].'">';
@@ -70,6 +70,8 @@ else
     echo '<textarea name="comment" rows="10" cols="50" id="comment" onblur="checkComment(this.value)"></textarea>';
 echo '		<p class="help-block" id="commentHelp"></p>';
 echo '		</div>';
+if(isset($_SESSION['pnumber']) && $_SESSION['pnumber'] != "")
+    echo '<input class="form-control" name="pnumber" type="text" id="pnumber" onblur="checkPNumber(this.value)" value="'.$_SESSION['pnumber'].'">';
 echo '		<hr>';
 echo '		<button id="submit" name="submit" class="btn btn-block btn-success" type="submit">Submit</button>';
 echo '	</form>';
@@ -82,7 +84,6 @@ if (isset($_POST['submit']))
 
 	$err="";
 
-	$comment = $_POST['comment'];
     if (isset($_POST['comment']) && $_POST['comment'] != "")
 	{
 		$comment = $_POST['comment'];
@@ -90,6 +91,14 @@ if (isset($_POST['submit']))
 	}
 	else
 		$err .="commentNull";
+
+    if (isset($_POST['pnumber']) && $_POST['pnumber'] != "")
+    {
+        $pnumber = $_POST['pnumber'];
+        $_SESSION['comment'] = $pnumber;
+    }
+    else
+        $err .="pnumberNull";
 
 	if (isset($_POST['fname']) && $_POST['fname'] != "")
 	{
