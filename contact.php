@@ -170,6 +170,8 @@ if (isset($_POST['submit']))
 	echo "<div>Last Name: $lastName</div>";
 	echo "<div>Email: $email</div>";
     echo "<div>Phone Number: $pnumber</div>";
+    echo "<div>Date of Birth: $dob</div>";
+    echo "<div>Preferred Contact Method: $contactPref</div>";
 	echo "<div>Comment: $comment</div>";
 }
 echo '</body>';
