@@ -79,7 +79,7 @@ else
 echo     '<p class="help-block" id="dobHelp"></p>';
 echo     '</div>';
 echo '<div class="form-group">                                                                                                              ';
-echo '		<label>Preferred Method of Contact:</label>';
+echo '		<label>Preferred Contact Method (Type Phone or Email):</label>';
 if(isset($_SESSION['contactPref']) && $_SESSION['contactPref'] != "")
     echo '<input class="form-control" name="contactPref" type="text" id="contactPref" onblur="checkContactMethod(this.value)" value="'.$_SESSION['contactPref'].'">';
 else
