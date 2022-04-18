@@ -79,13 +79,13 @@ if (isset($_POST['submit']))
 {
 	$err="";
 	$comment=$_POST['comment'];
-	if (isset($_POST['fname']) && $_POST['fname']!="")
+	if (isset($_POST['fname']) && $_POST['fname'] != "")
 	{
 		$firstName=$_POST['fname'];
-		$_SESSION['first']=$firstName;
+		$_SESSION['first'] = $firstName;
 	}
 	else
-		$err.="FnameNull";
+		$err .="FnameNull";
 	if (isset($_POST['lname']) && $_POST['lname']!="")
 	{
 		$lastName=$_POST['lname'];
@@ -104,6 +104,7 @@ if (isset($_POST['submit']))
 	{
 		redirect("index.php?page=contact&err=$err");
 	}
+    die("error is $err");
 	echo "<div>First Name: $firstName</div>";
 	echo "<div>Last Name: $lastName</div>";
 	echo "<div>Email: $email</div>";
