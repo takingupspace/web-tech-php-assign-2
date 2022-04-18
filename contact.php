@@ -62,6 +62,14 @@ else
     echo '<input class="form-control" name="email" type="text" id="email" onblur="checkEmail(this.value)">';
 echo '		<p class="help-block" id="emailHelp"></p>';
 echo '		</div>';
+echo '<div class="form-group">                                                                                                              ';
+echo '		<label>Phone Number:</label>';
+if(isset($_SESSION['pnumber']) && $_SESSION['pnumber'] != "")
+    echo '<input class="form-control" name="pnumber" type="text" id="pnumber" onblur="checkPNumber(this.value)" value="'.$_SESSION['pnumber'].'">';
+else
+    echo '<input class="form-control" name="pnumber" type="text" id="pnumber" onblur="checkPNumber(this.value)">';
+echo     '<p class="help-block" id="pnumberHelp"></p>';
+echo     '</div>';
 echo '		<div class="form-group">';
 echo '		<label>Comment:</label>';
 if(isset($_SESSION['comment']) && $_SESSION['comment'] != "")
@@ -70,12 +78,6 @@ else
     echo '<textarea name="comment" rows="10" cols="50" id="comment" onblur="checkComment(this.value)"></textarea>';
 echo '		<p class="help-block" id="commentHelp"></p>';
 echo '		</div>';
-if(isset($_SESSION['pnumber']) && $_SESSION['pnumber'] != "")
-    echo '<input class="form-control" name="pnumber" type="text" id="pnumber" onblur="checkPNumber(this.value)" value="'.$_SESSION['pnumber'].'">';
-else
-    echo '<input class="form-control" name="pnumber" type="text" id="pnumber" onblur="checkPNumber(this.value)">';
-echo     '<p class="help-block" id="pnumberHelp"></p>';
-echo     '</div>';
 echo '		<hr>';
 echo '		<button id="submit" name="submit" class="btn btn-block btn-success" type="submit">Submit</button>';
 echo '	</form>';
