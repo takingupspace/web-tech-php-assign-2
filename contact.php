@@ -70,6 +70,22 @@ else
     echo '<input class="form-control" name="pnumber" type="text" id="pnumber" onblur="checkPNumber(this.value)">';
 echo     '<p class="help-block" id="pnumberHelp"></p>';
 echo     '</div>';
+echo '<div class="form-group">                                                                                                              ';
+echo '		<label>Date of Birth:</label>';
+if(isset($_SESSION['dob']) && $_SESSION['dob'] != "")
+    echo '<input class="form-control" name="dob" type="text" id="dob" onblur="checkDOB(this.value)" value="'.$_SESSION['dob'].'">';
+else
+    echo '<input class="form-control" name="dob" type="text" id="dob" onblur="checkDOB(this.value)">';
+echo     '<p class="help-block" id="dobHelp"></p>';
+echo     '</div>';
+echo '<div class="form-group">                                                                                                              ';
+echo '		<label>Phone Number:</label>';
+if(isset($_SESSION['contactPref']) && $_SESSION['contactPref'] != "")
+    echo '<input class="form-control" name="contactPref" type="text" id="contactPref" onblur="checkContactMethod(this.value)" value="'.$_SESSION['contactPref'].'">';
+else
+    echo '<input class="form-control" name="contactPref" type="text" id="contactPref" onblur="checkContactMethod(this.value)">';
+echo     '<p class="help-block" id="contactmethodHelp"></p>';
+echo     '</div>';
 echo '		<div class="form-group">';
 echo '		<label>Comment:</label>';
 if(isset($_SESSION['comment']) && $_SESSION['comment'] != "")
@@ -97,6 +113,22 @@ if (isset($_POST['submit']))
 	}
 	else
 		$err .="commentNull";
+
+    if (isset($_POST['contactPref']) && $_POST['contactPref'] != "")
+    {
+        $contactPref = $_POST['contactPref'];
+        $_SESSION['contactPref'] = $contactPref;
+    }
+    else
+        $err .="contactPrefNull";
+
+    if (isset($_POST['dob']) && $_POST['dob'] != "")
+    {
+        $dob = $_POST['dob'];
+        $_SESSION['dob'] = $dob;
+    }
+    else
+        $err .="dobNull";
 
     if (isset($_POST['pnumber']) && $_POST['pnumber'] != "")
     {
