@@ -67,7 +67,7 @@ echo '		<label>Comment:</label>';
 if(isset($_SESSION['comment']) && $_SESSION['comment'] != "")
     echo '<textarea name="comment" rows="10" cols="50" id="comment" onblur="checkComment(this.value)" value="'.$_SESSION['comment'].'"></textarea>';
 else
-echo '<textarea name="comment" rows="10" cols="50" id="comment" onblur="checkComment(this.value)"></textarea>';
+    echo '<textarea name="comment" rows="10" cols="50" id="comment" onblur="checkComment(this.value)"></textarea>';
 echo '		<p class="help-block" id="commentHelp"></p>';
 echo '		</div>';
 echo '		<hr>';
