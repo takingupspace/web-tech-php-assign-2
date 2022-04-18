@@ -1,5 +1,25 @@
 <?php
 session_start();
+echo '<nav class="navbar navbar-inverse">                                                                                               ';
+echo '<div class="container-fluid">';
+echo '  <div class="navbar-header">';
+echo '    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">';
+echo '      <span class="icon-bar"></span>';
+echo '      <span class="icon-bar"></span>';
+echo '      <span class="icon-bar"></span>';
+echo '    </button>';
+echo '    <a class="navbar-brand" href="#">Travis Sauer's Resume Website</a>';
+echo '  </div>';
+echo '  <div class="collapse navbar-collapse" id="myNavbar">';
+echo '    <ul class="nav navbar-nav">';
+echo '      <li class="active"><a href="./home.html">Home</a></li>';
+echo '      <li><a href="./work.html">Work</a></li>';
+echo '      <li><a href="./school.html">School</a></li>';
+echo '      <li><a href="./contact.html">Contact</a></li>';
+echo '    </ul>';
+echo '  </div>';
+echo '</div>';
+echo '</nav>';
 echo '<div id="container">
 <div class="panel panel-primary">
 	<div class="panel-heading">Contact Form</div>
