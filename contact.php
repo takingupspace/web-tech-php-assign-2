@@ -173,6 +173,7 @@ if (isset($_POST['submit']))
     echo "<div>Date of Birth: $dob</div>";
     echo "<div>Preferred Contact Method: $contactPref</div>";
 	echo "<div>Comment: $comment</div>";
+    echo "<div>Error: $err</div>";
 }
 echo '</body>';
 echo '</html>';
