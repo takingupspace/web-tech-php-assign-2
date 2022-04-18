@@ -29,13 +29,13 @@ echo '    </ul>';
 echo '  </div>';
 echo '</div>';
 echo '</nav>';
-echo '<div id="container">
-<div class="panel panel-primary">
-	<div class="panel-heading">Contact Form</div>
-	<div class="panel-body">
-<form method="post" action="">
-	<div class="form-group">
-	<label>First Name:</label>';
+echo '<div id="container">';
+echo '<div class="panel panel-primary">                 ';
+echo '	<div class="panel-heading">Contact Form</div>';
+echo '	<div class="panel-body">';
+echo '<form method="post" action="">';
+echo '	<div class="form-group">';
+echo '	<label>First Name:</label>';
 if (isset($_SESSION['first']) && $_SESSION['first'] != "")
 	echo '<input class="form-control" name="fname" type="text" id="fname" onblur="checkFName(this.value)" value="'.$_SESSION['first'].'">';
 else
@@ -54,27 +54,43 @@ else
 }
 echo '<p class="help-block" id="lnameHelp"></p>';
 echo '</div>';
-echo '<div class="form-group">
-		<label>Email:</label>
-		<input class="form-control" name="email" type="text" id="email">
-		<p class="help-block" id="emailHelp"></p>
-		</div>
-		<div class="form-group">
-		<label>Comment:</label>
-			<textarea name="comment" rows="10" cols="50"></textarea>
-		<p class="help-block" id="commentHelp"></p>
-		</div>
-		<hr>
-		<button id="submit" name="submit" class="btn btn-block btn-success" type="submit">Submit</button>
-	</form>
-	</div>
-		</div>
-	</div>
-</div>';
+echo '<div class="form-group">                                                                                                              ';
+echo '		<label>Email:</label>';
+if(isset($_SESSION['email']) && $_SESSION['email'] != "")
+    echo '<input class="form-control" name="email" type="text" id="email" onblur="checkEmail(this.value)" value="'.$_SESSION['email'].'">';
+else
+    echo '<input class="form-control" name="email" type="text" id="email" onblur="checkEmail(this.value)">';
+echo '		<p class="help-block" id="emailHelp"></p>';
+echo '		</div>';
+echo '		<div class="form-group">';
+echo '		<label>Comment:</label>';
+if(isset($_SESSION['comment']) && $_SESSION['comment'] != "")
+    echo '<textarea name="comment" rows="10" cols="50" id="comment" onblur="checkComment(this.value)" value="'.$_SESSION['comment'].'"></textarea>';
+else
+echo '<textarea name="comment" rows="10" cols="50" id="comment" onblur="checkComment(this.value)"></textarea>';
+echo '		<p class="help-block" id="commentHelp"></p>';
+echo '		</div>';
+echo '		<hr>';
+echo '		<button id="submit" name="submit" class="btn btn-block btn-success" type="submit">Submit</button>';
+echo '	</form>';
+echo '	</div>';
+echo '		</div>';
+echo '	</div>';
+echo '</div>';
 if (isset($_POST['submit']))
 {
+
 	$err="";
+
 	$comment=$_POST['comment'];
+    if (isset($_POST['comment']) && $_POST['comment'] != "")
+	{
+		$comment=$_POST['comment'];
+		$_SESSION['comment'] = $firstName;
+	}
+	else
+		$err .="commentNull";
+
 	if (isset($_POST['fname']) && $_POST['fname'] != "")
 	{
 		$firstName=$_POST['fname'];
@@ -82,6 +98,7 @@ if (isset($_POST['submit']))
 	}
 	else
 		$err .="FnameNull";
+
 	if (isset($_POST['lname']) && $_POST['lname']!="")
 	{
 		$lastName=$_POST['lname'];
@@ -89,6 +106,7 @@ if (isset($_POST['submit']))
 	}
 	else
 		$err.="LnameNull";
+
 	if (isset($_POST['email']) && $_POST['email']!="")
 	{
 		$email=$_POST['email'];
@@ -96,6 +114,7 @@ if (isset($_POST['submit']))
 	}
 	else
 		$err.="emailNull";
+
 	if (isset($err) && $err != "")
 	{
 		redirect("index.php?page=contact&err=$err");
