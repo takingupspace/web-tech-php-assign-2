@@ -137,7 +137,7 @@ if (isset($_POST['submit']))
 	echo "<div>First Name: $firstName</div>";
 	echo "<div>Last Name: $lastName</div>";
 	echo "<div>Email: $email</div>";
-    echo "<div>Phone Number: $pnumber</div>"
+    echo "<div>Phone Number: $pnumber</div>";
 	echo "<div>Comment: $comment</div>";
 }
 echo '</body>';
