@@ -25,6 +25,10 @@ if(isset($_GET['page']) && $_GET['page'] != ""){
             break;
     }
 }else{
+    echo '<li class="active"><a href="index.php?page=home">Home</a></li>';
+    echo '              <li><a href="index.php?page=work">Work</a></li>';
+    echo '              <li><a href="index.php?page=school">School</a></li>';
+    echo '              <li><a href="index.php?page=contact">Contact</a></li>';
     include("home.php");
 }
 echo '</body>';
