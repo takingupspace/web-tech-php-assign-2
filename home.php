@@ -1,10 +1,6 @@
 <?php
 echo '<!DOCTYPE html>                                                                                                                                                                                                         ';
 echo '<html>';
-echo '    <head>';
-echo '        <link rel="stylesheet" href="./assets/bootstrap-3.3.7-dist/css/bootstrap.css">';
-echo '        <title>Home</title>';
-echo '    </head>';
 echo '    <body>';
 echo '          <div class="panel-group">';
 echo '            <div class="panel panel-default">';

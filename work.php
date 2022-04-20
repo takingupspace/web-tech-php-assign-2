@@ -1,10 +1,6 @@
 <?php
 echo '<!DOCTYPE html>                                                                                                                                                                                                         ';
 echo '<html>';
-echo '    <head>';
-echo '        <link rel="stylesheet" href="./assets/bootstrap-3.3.7-dist/css/bootstrap.css">';
-echo '        <title>Work</title>';
-echo '    </head>';
 echo '    <body>';
 echo '                    <h2>WORK EXPERIENCE</h2>';
 echo '            <strong>Patterson-UTI Drilling Company LLC,</strong> Victoria, TX - 2017-2019<br/>';

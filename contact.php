@@ -2,11 +2,6 @@
 session_start();
 echo '<!DOCTYPE html>';
 echo '<html>';
-echo '<head>';
-echo '<link rel="stylesheet" href="./assets/bootstrap-3.3.7-dist/css/bootstrap.css">                ';
-echo '<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>';
-echo '<title>Contact</title>';
-echo '</head>';
 echo '<body>';
 echo '<script src="./assets/validation.js"></script>';
 echo '<div id="container">';

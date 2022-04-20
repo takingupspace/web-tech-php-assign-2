@@ -2,10 +2,7 @@
 include("functions.php");
 echo '<!DOCTYPE html>                                                                                                                                                                                                   ';
 echo '<html>';
-echo '    <head>';
-echo '        <link rel="stylesheet" href="./assets/bootstrap-3.3.7-dist/css/bootstrap.css">';
-echo '        <title>School</title>';
-echo '    </head>';
+include("title.php");
 echo '    <body>';
 include("navigation.php");
 if(isset($_GET['page']) && $_GET['page'] != ""){
