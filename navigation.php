@@ -2,6 +2,7 @@
 echo '<ul class="nav nav-tabs">';
 if(isset($_GET['page']) && $_GET['page'] != ""){
     switch($_GET['page']){
+        echo '<li class="active"><a href="index.php?page=home">Home</a></li>';
         case "school":
             echo '<li class="active"><a href="index.php?page=home">Home</a></li>';
             echo '              <li><a href="index.php?page=work">Work</a></li>';
