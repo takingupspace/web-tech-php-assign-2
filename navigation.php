@@ -12,7 +12,6 @@ echo '          </div>';
 echo '          <div class="collapse navbar-collapse" id="myNavbar">';
 echo '            <ul class="nav navbar-nav">';
 if(isset($_GET['page']) && $_GET['page'] != ""){
-    echo '<li class="active"><a href="index.php?page=home">Home</a></li>';
     switch($_GET['page']){
         case "school":
             echo '<li class="active"><a href="index.php?page=home">Home</a></li>';
@@ -34,6 +33,9 @@ if(isset($_GET['page']) && $_GET['page'] != ""){
 
         default:
             echo '<li class="active"><a href="index.php?page=home">Home</a></li>';
+            echo '              <li><a href="index.php?page=work">Work</a></li>';
+            echo '              <li><a href="index.php?page=school">School</a></li>';
+            echo '              <li><a href="index.php?page=contact">Contact</a></li>';
             
     }
 }
